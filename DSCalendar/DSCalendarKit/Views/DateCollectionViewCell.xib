@@ -39,7 +39,7 @@
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-8L-fk1">
                         <rect key="frame" x="0.0" y="0.0" width="45" height="42"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <state key="normal" title="1">
+                        <state key="normal">
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>

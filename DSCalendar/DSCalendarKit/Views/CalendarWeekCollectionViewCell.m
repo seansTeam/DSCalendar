@@ -9,6 +9,12 @@
 #import "CalendarWeekCollectionViewCell.h"
 #import "DateCollectionViewCell.h"
 
+@interface CalendarWeekCollectionViewCell ()
+
+@property (strong, nonatomic) NSDate *firstDateOfWeek;
+
+@end
+
 @implementation CalendarWeekCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame {
@@ -38,18 +44,25 @@
     self.CalendarWeekCollectionView.dataSource = self;
     [self.CalendarWeekCollectionView registerClass:[DateCollectionViewCell class] forCellWithReuseIdentifier:@"DateCollectionViewCell"];
     self.CalendarWeekCollectionView.bounces = NO;
+    
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[NSDate date]];
     return 7;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DateCollectionViewCell *cell = (DateCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"DateCollectionViewCell" forIndexPath:indexPath];
+    NSDate *date = self.firstDateOfWeek;
+    for (int i = 0; i < indexPath.item; i++) {
+        date = [self.calendar getNextDateFromDate:date];
+    }
+    cell.date = date;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"d"];
+    NSString *nowDateString = [dateFormat stringFromDate:date];
+    [cell.dateButton setTitle:nowDateString forState:UIControlStateNormal];
     return cell;
 }
 

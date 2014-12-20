@@ -17,5 +17,9 @@
 - (NSDate *)firstDayOfCurrentMonth:(NSDate*)date;
 - (NSUInteger)numberOfDaysInCurrentMonth:(NSDate*)date;
 - (NSUInteger)numberOfWeeksInCurrentMonth:(NSDate*)date;
+- (NSDate *)getFirstDayOfTheWeekFromDate:(NSDate *)givenDate;
+- (NSDate *)getFirstDayOfTheCalendarFromDate:(NSDate *)givenDate;
+- (NSDate *)getFirstDayOfTheWeekFromWeek:(NSInteger)givenWeek :(NSDate *)givenDate;
+- (NSDate *)getNextDateFromDate:(NSDate *)givenDate;
 
 @end

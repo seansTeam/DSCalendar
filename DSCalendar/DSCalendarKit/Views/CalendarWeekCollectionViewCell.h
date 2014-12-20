@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Calendar.h"
 
 @interface CalendarWeekCollectionViewCell : UICollectionViewCell <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *CalendarWeekCollectionView;
 @property (nonatomic) NSInteger currentWeek;
+@property (strong, nonatomic) Calendar *calendar;
 
 @end

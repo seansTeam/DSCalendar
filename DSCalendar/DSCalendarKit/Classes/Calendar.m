@@ -17,6 +17,37 @@
     return yearint;
 }
 
+// Finds the date for the first day of the calendar
+- (NSDate *)getFirstDayOfTheCalendarFromDate:(NSDate *)givenDate {
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
+    [components setDay:1];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *date = [gregorian dateFromComponents:components];
+    return [self getFirstDayOfTheWeekFromDate:date];
+}
+
+// Finds the date for the first day of the week
+- (NSDate *)getFirstDayOfTheWeekFromDate:(NSDate *)givenDate {
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
+    // Find Sunday for the given date
+    components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
+    [components setWeekday:1]; // 1 == Sunday, 7 == Saturday
+    [components setWeek:[components week]];
+    NSLog(@"Original date is %@ and beginning of week is %@", givenDate , [calendar dateFromComponents:components]);
+    return [calendar dateFromComponents:components];
+}
+
+- (NSDate *)getFirstDayOfTheWeekFromWeek:(NSInteger)givenWeek :(NSDate *)givenDate {
+    NSDate *firstDate = [self getFirstDayOfTheCalendarFromDate:givenDate];
+    NSDate *newDate = [[NSDate alloc]initWithTimeIntervalSinceReferenceDate:([firstDate timeIntervalSinceReferenceDate]+24*3600*7*(givenWeek - 1))];
+    return newDate;
+}
+
+- (NSDate *)getNextDateFromDate:(NSDate *)givenDate {
+    NSDate *newDate = [[NSDate alloc]initWithTimeIntervalSinceReferenceDate:([givenDate timeIntervalSinceReferenceDate]+24*3600)];
+    return newDate;
+}
+
 #pragma mark -  Get first date of this month.
 - (NSDate *)firstDayOfCurrentMonth:(NSDate*)date {
     NSDate *startDate = nil;

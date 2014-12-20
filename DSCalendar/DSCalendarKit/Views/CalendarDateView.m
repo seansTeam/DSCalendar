@@ -44,13 +44,15 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSDate *date=[NSDate date];
+    NSDate *date = [NSDate date];
     return [self.calendar numberOfWeeksInCurrentMonth:date];;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CalendarWeekCollectionViewCell *cell = (CalendarWeekCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CalendarWeekCollectionViewCell" forIndexPath:indexPath];
     cell.currentWeek = indexPath.item + 1;
+    cell.calendar = self.calendar;
+    cell.calendar.calendar = self.calendar.calendar;
     return cell;
 }
 
