@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CalendarDateView.h
 //  DSCalendar
 //
 //  Created by Sean Yang on 2014/12/19.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-@property (weak, nonatomic) IBOutlet UIView *DScalendarView;
+@interface CalendarDateView : UIView
 
 @end
-

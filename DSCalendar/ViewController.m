@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DSCalendarKit/DSCalendarView.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    DSCalendarView *DScalendarView = [[DSCalendarView alloc] init];
+    [self.DScalendarView addSubview:DScalendarView];
 }
 
 - (void)didReceiveMemoryWarning {

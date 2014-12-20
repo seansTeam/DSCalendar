@@ -14,6 +14,15 @@
 		1431D4E01A43C0FE00FA7AD9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1431D4DF1A43C0FE00FA7AD9 /* Images.xcassets */; };
 		1431D4E31A43C0FE00FA7AD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1431D4E11A43C0FE00FA7AD9 /* LaunchScreen.xib */; };
 		1431D4EF1A43C0FE00FA7AD9 /* DSCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431D4EE1A43C0FE00FA7AD9 /* DSCalendarTests.m */; };
+		14658B4D1A45BDB60027134C /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B3F1A45BDB60027134C /* Calendar.m */; };
+		14658B4E1A45BDB60027134C /* CalendarDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B431A45BDB60027134C /* CalendarDateView.m */; };
+		14658B4F1A45BDB60027134C /* CalendarDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14658B441A45BDB60027134C /* CalendarDateView.xib */; };
+		14658B501A45BDB60027134C /* CalendarWeekCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B461A45BDB60027134C /* CalendarWeekCollectionViewCell.m */; };
+		14658B511A45BDB60027134C /* CalendarWeekCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14658B471A45BDB60027134C /* CalendarWeekCollectionViewCell.xib */; };
+		14658B521A45BDB60027134C /* DateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B491A45BDB60027134C /* DateCollectionViewCell.m */; };
+		14658B531A45BDB60027134C /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14658B4A1A45BDB60027134C /* DateCollectionViewCell.xib */; };
+		14658B541A45BDB60027134C /* DSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B4B1A45BDB60027134C /* DSCalendarView.m */; };
+		14658B551A45BDB60027134C /* DSCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14658B4C1A45BDB60027134C /* DSCalendarView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +49,21 @@
 		1431D4E81A43C0FE00FA7AD9 /* DSCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1431D4ED1A43C0FE00FA7AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1431D4EE1A43C0FE00FA7AD9 /* DSCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCalendarTests.m; sourceTree = "<group>"; };
+		14658B3E1A45BDB60027134C /* Calendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calendar.h; sourceTree = "<group>"; };
+		14658B3F1A45BDB60027134C /* Calendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calendar.m; sourceTree = "<group>"; };
+		14658B401A45BDB60027134C /* DSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCalendarView.h; sourceTree = "<group>"; };
+		14658B421A45BDB60027134C /* CalendarDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDateView.h; sourceTree = "<group>"; };
+		14658B431A45BDB60027134C /* CalendarDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDateView.m; sourceTree = "<group>"; };
+		14658B441A45BDB60027134C /* CalendarDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarDateView.xib; sourceTree = "<group>"; };
+		14658B451A45BDB60027134C /* CalendarWeekCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarWeekCollectionViewCell.h; sourceTree = "<group>"; };
+		14658B461A45BDB60027134C /* CalendarWeekCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarWeekCollectionViewCell.m; sourceTree = "<group>"; };
+		14658B471A45BDB60027134C /* CalendarWeekCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarWeekCollectionViewCell.xib; sourceTree = "<group>"; };
+		14658B481A45BDB60027134C /* DateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCollectionViewCell.h; sourceTree = "<group>"; };
+		14658B491A45BDB60027134C /* DateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCollectionViewCell.m; sourceTree = "<group>"; };
+		14658B4A1A45BDB60027134C /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
+		14658B4B1A45BDB60027134C /* DSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCalendarView.m; sourceTree = "<group>"; };
+		14658B4C1A45BDB60027134C /* DSCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSCalendarView.xib; sourceTree = "<group>"; };
+		14658B561A45BF040027134C /* DSCalendar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DSCalendar-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +105,7 @@
 		1431D4D11A43C0FE00FA7AD9 /* DSCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				14658B3C1A45BDB60027134C /* DSCalendarKit */,
 				1431D4D61A43C0FE00FA7AD9 /* AppDelegate.h */,
 				1431D4D71A43C0FE00FA7AD9 /* AppDelegate.m */,
 				1431D4D91A43C0FE00FA7AD9 /* ViewController.h */,
@@ -96,6 +121,7 @@
 		1431D4D21A43C0FE00FA7AD9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14658B561A45BF040027134C /* DSCalendar-Prefix.pch */,
 				1431D4D31A43C0FE00FA7AD9 /* Info.plist */,
 				1431D4D41A43C0FE00FA7AD9 /* main.m */,
 			);
@@ -117,6 +143,43 @@
 				1431D4ED1A43C0FE00FA7AD9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14658B3C1A45BDB60027134C /* DSCalendarKit */ = {
+			isa = PBXGroup;
+			children = (
+				14658B3D1A45BDB60027134C /* Classes */,
+				14658B401A45BDB60027134C /* DSCalendarView.h */,
+				14658B411A45BDB60027134C /* Views */,
+			);
+			path = DSCalendarKit;
+			sourceTree = "<group>";
+		};
+		14658B3D1A45BDB60027134C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				14658B3E1A45BDB60027134C /* Calendar.h */,
+				14658B3F1A45BDB60027134C /* Calendar.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		14658B411A45BDB60027134C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14658B421A45BDB60027134C /* CalendarDateView.h */,
+				14658B431A45BDB60027134C /* CalendarDateView.m */,
+				14658B441A45BDB60027134C /* CalendarDateView.xib */,
+				14658B451A45BDB60027134C /* CalendarWeekCollectionViewCell.h */,
+				14658B461A45BDB60027134C /* CalendarWeekCollectionViewCell.m */,
+				14658B471A45BDB60027134C /* CalendarWeekCollectionViewCell.xib */,
+				14658B481A45BDB60027134C /* DateCollectionViewCell.h */,
+				14658B491A45BDB60027134C /* DateCollectionViewCell.m */,
+				14658B4A1A45BDB60027134C /* DateCollectionViewCell.xib */,
+				14658B4B1A45BDB60027134C /* DSCalendarView.m */,
+				14658B4C1A45BDB60027134C /* DSCalendarView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +262,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14658B531A45BDB60027134C /* DateCollectionViewCell.xib in Resources */,
+				14658B551A45BDB60027134C /* DSCalendarView.xib in Resources */,
+				14658B511A45BDB60027134C /* CalendarWeekCollectionViewCell.xib in Resources */,
+				14658B4F1A45BDB60027134C /* CalendarDateView.xib in Resources */,
 				1431D4DE1A43C0FE00FA7AD9 /* Main.storyboard in Resources */,
 				1431D4E31A43C0FE00FA7AD9 /* LaunchScreen.xib in Resources */,
 				1431D4E01A43C0FE00FA7AD9 /* Images.xcassets in Resources */,
@@ -220,8 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1431D4DB1A43C0FE00FA7AD9 /* ViewController.m in Sources */,
+				14658B521A45BDB60027134C /* DateCollectionViewCell.m in Sources */,
+				14658B4E1A45BDB60027134C /* CalendarDateView.m in Sources */,
 				1431D4D81A43C0FE00FA7AD9 /* AppDelegate.m in Sources */,
 				1431D4D51A43C0FE00FA7AD9 /* main.m in Sources */,
+				14658B501A45BDB60027134C /* CalendarWeekCollectionViewCell.m in Sources */,
+				14658B4D1A45BDB60027134C /* Calendar.m in Sources */,
+				14658B541A45BDB60027134C /* DSCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DSCalendar/DSCalendar-Prefix.pch";
 				INFOPLIST_FILE = DSCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,7 +430,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DSCalendar/DSCalendar-Prefix.pch";
 				INFOPLIST_FILE = DSCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -414,6 +492,7 @@
 				1431D4F41A43C0FE00FA7AD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1431D4F51A43C0FE00FA7AD9 /* Build configuration list for PBXNativeTarget "DSCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +501,7 @@
 				1431D4F71A43C0FE00FA7AD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
