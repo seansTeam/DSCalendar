@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fNN-7z-LCN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -14,23 +14,76 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srG-pD-fdL">
-                                <rect key="frame" x="0.0" y="25" width="320" height="250"/>
+                                <rect key="frame" x="0.0" y="2" width="320" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hbt-r7-4nw"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="DScalendarView" destination="srG-pD-fdL" id="7PU-ZN-QEc"/>
+                        <segue destination="TXj-3r-aRq" kind="push" identifier="weekSegue" id="LKT-zY-p3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057" y="216"/>
+        </scene>
+        <!--Week View Controller-->
+        <scene sceneID="4yx-i8-zfY">
+            <objects>
+                <viewController id="TXj-3r-aRq" customClass="WeekViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ygy-ri-hLJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="K2k-Ms-bwv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HMd-WD-9Wv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TdI-SU-lmq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="228"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cQf-Nx-dbx"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="weekCalendarView" destination="TdI-SU-lmq" id="ZTf-yv-fhk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWM-XA-6hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="216"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J5x-iI-1yj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fNN-7z-LCN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="o5H-vg-8q8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VdU-Yt-p7x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZ3-dY-sBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="216"/>
         </scene>
     </scenes>
 </document>

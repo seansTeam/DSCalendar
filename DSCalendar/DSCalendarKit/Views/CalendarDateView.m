@@ -9,10 +9,12 @@
 #import "CalendarDateView.h"
 #import "CalendarWeekCollectionViewCell.h"
 #import "Calendar.h"
+#import "DateManerger.h"
 
 @interface CalendarDateView () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *calendarCollectionView;
 @property (strong, nonatomic) Calendar *calendar;
+@property (strong, nonatomic) NSDate *date;
 
 @end
 
@@ -38,19 +40,29 @@
     self.calendarCollectionView.dataSource = self;
     [self.calendarCollectionView registerClass:[CalendarWeekCollectionViewCell class] forCellWithReuseIdentifier:@"CalendarWeekCollectionViewCell"];
     self.calendarCollectionView.bounces = NO;
-    self.calendar = [[Calendar alloc] init];
-    self.calendar.calendar = [NSCalendar currentCalendar];
+    self.calendar = [Calendar sharedCalendar];
+    self.date = [NSDate date];
+
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    NSDate *date = [NSDate date];
-    return [self.calendar numberOfWeeksInCurrentMonth:date];;
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    DateManerger *dateManerger = [DateManerger sharedDateManerger];
+    if (dateManerger.status == DSCALENDAR_STYLE_WEEK) {
+        return 1;
+    }
+    return [self.calendar numberOfWeeksInCurrentMonth:self.date];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CalendarWeekCollectionViewCell *cell = (CalendarWeekCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CalendarWeekCollectionViewCell" forIndexPath:indexPath];
-    cell.currentWeek = indexPath.item + 1;
+    DateManerger *dateManerger = [DateManerger sharedDateManerger];
+    if (dateManerger.status == DSCALENDAR_STYLE_WEEK) {
+        cell.currentWeek = [self.calendar week:[[DateManerger sharedDateManerger] seletedDate]];
+    }
+    else {
+        cell.currentWeek = indexPath.item + 1;
+    }
+    
     cell.calendar = self.calendar;
     cell.calendar.calendar = self.calendar.calendar;
     return cell;

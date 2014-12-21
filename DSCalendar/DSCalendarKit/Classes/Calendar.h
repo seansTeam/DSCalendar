@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSCalendar *calendar;
 @property (strong, nonatomic) NSDate *date;
 
++ (id)sharedCalendar;
 -(NSInteger)getYear:(NSDate*)date;
 - (NSDate *)firstDayOfCurrentMonth:(NSDate*)date;
 - (NSUInteger)numberOfDaysInCurrentMonth:(NSDate*)date;
@@ -21,6 +22,7 @@
 - (NSDate *)getFirstDayOfTheCalendarFromDate:(NSDate *)givenDate;
 - (NSDate *)getFirstDayOfTheWeekFromWeek:(NSInteger)givenWeek :(NSDate *)givenDate;
 - (NSDate *)getNextDateFromDate:(NSDate *)givenDate;
+- (NSInteger)week:(NSDate*)date;
 + (BOOL)isToday:(NSDate *)givenDate;
 
 @end

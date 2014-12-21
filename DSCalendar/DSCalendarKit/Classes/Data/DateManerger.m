@@ -17,7 +17,7 @@ static DateManerger *dateManerger;
     if (!self) {
         return nil;
     }
-    
+    self.seletedDate = [NSDate date];
     return self;
 }
 

@@ -71,6 +71,10 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"d"];
     NSString *nowDateString = [dateFormat stringFromDate:date];
+    [cell.dateButton setTitle:nowDateString forState:UIControlStateNormal];
+    
+    [dateFormat setDateFormat:@"Md"];
+    nowDateString = [dateFormat stringFromDate:date];
     NSString *selectedDayString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
     if ([nowDateString isEqualToString:selectedDayString]) {
         cell.selectedDayImageView.hidden = NO;
@@ -79,8 +83,15 @@
         cell.selectedDayImageView.hidden = YES;
     }
     
-    
-    [cell.dateButton setTitle:nowDateString forState:UIControlStateNormal];
+    [dateFormat setDateFormat:@"M"];
+    NSString *monthString = [dateFormat stringFromDate:date];
+    NSString *selectedMonthString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
+    if ([monthString isEqualToString:selectedMonthString]) {
+        cell.dateButton.enabled = YES;
+    }
+    else {
+        cell.dateButton.enabled = NO;
+    }
     return cell;
 }
 

@@ -9,7 +9,28 @@
 #import "Calendar.h"
 
 @implementation Calendar
+
 @synthesize calendar;
+
+static Calendar *_calendar;
+
+- (id)init {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    self.calendar = [NSCalendar currentCalendar];
+    return self;
+}
+
++ (id)sharedCalendar {
+    @synchronized(self) {
+        if (_calendar == nil) {
+            _calendar = [[Calendar alloc] init];
+        }
+    }
+    return _calendar;
+}
 
 -(NSInteger)getYear:(NSDate*)date {
     NSDateComponents*dateCom=[calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:date];
@@ -33,7 +54,7 @@
     components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
     [components setWeekday:1]; // 1 == Sunday, 7 == Saturday
     [components setWeek:[components week]];
-    NSLog(@"Original date is %@ and beginning of week is %@", givenDate , [calendar dateFromComponents:components]);
+    
     return [calendar dateFromComponents:components];
 }
 

@@ -37,7 +37,6 @@
 
 - (IBAction)onTouchDateButton:(UIButton *)sender {
     [[DateManerger sharedDateManerger] dateDidseleted:self.date];
-    self.selectedDayImageView.hidden = NO;
 }
 
 @end

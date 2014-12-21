@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "DSCalendarKit/DSCalendarView.h"
 
-@interface ViewController ()
+@interface ViewController () <DSCalendarViewDelegate>
+
+@property (strong, nonatomic) DSCalendarView *calendarView;
 
 @end
 
@@ -18,13 +20,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    DSCalendarView *DScalendarView = [[DSCalendarView alloc] init];
-    [self.DScalendarView addSubview:DScalendarView];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.calendarView = [[DSCalendarView alloc] init];
+    [self.DScalendarView addSubview:self.calendarView];
+    self.calendarView.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.calendarView.delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)didSeletedDate {
+    [self performSegueWithIdentifier:@"weekSegue" sender:self];
 }
 
 @end

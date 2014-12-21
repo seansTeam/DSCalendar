@@ -25,6 +25,7 @@
 		14658B551A45BDB60027134C /* DSCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14658B4C1A45BDB60027134C /* DSCalendarView.xib */; };
 		14658B5A1A4654B50027134C /* DateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B591A4654B50027134C /* DateData.m */; };
 		14658B5D1A465A6F0027134C /* DateManerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B5C1A465A6F0027134C /* DateManerger.m */; };
+		14658B601A46671D0027134C /* WeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B5F1A46671D0027134C /* WeekViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		14658B591A4654B50027134C /* DateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateData.m; sourceTree = "<group>"; };
 		14658B5B1A465A6F0027134C /* DateManerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateManerger.h; sourceTree = "<group>"; };
 		14658B5C1A465A6F0027134C /* DateManerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateManerger.m; sourceTree = "<group>"; };
+		14658B5E1A46671D0027134C /* WeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekViewController.h; sourceTree = "<group>"; };
+		14658B5F1A46671D0027134C /* WeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				1431D4D71A43C0FE00FA7AD9 /* AppDelegate.m */,
 				1431D4D91A43C0FE00FA7AD9 /* ViewController.h */,
 				1431D4DA1A43C0FE00FA7AD9 /* ViewController.m */,
+				14658B5E1A46671D0027134C /* WeekViewController.h */,
+				14658B5F1A46671D0027134C /* WeekViewController.m */,
 				1431D4DC1A43C0FE00FA7AD9 /* Main.storyboard */,
 				1431D4DF1A43C0FE00FA7AD9 /* Images.xcassets */,
 				1431D4E11A43C0FE00FA7AD9 /* LaunchScreen.xib */,
@@ -310,6 +315,7 @@
 				1431D4D81A43C0FE00FA7AD9 /* AppDelegate.m in Sources */,
 				1431D4D51A43C0FE00FA7AD9 /* main.m in Sources */,
 				14658B501A45BDB60027134C /* CalendarWeekCollectionViewCell.m in Sources */,
+				14658B601A46671D0027134C /* WeekViewController.m in Sources */,
 				14658B5A1A4654B50027134C /* DateData.m in Sources */,
 				14658B4D1A45BDB60027134C /* Calendar.m in Sources */,
 				14658B5D1A465A6F0027134C /* DateManerger.m in Sources */,
