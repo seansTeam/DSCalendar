@@ -48,6 +48,18 @@
     return newDate;
 }
 
++ (BOOL)isToday:(NSDate *)givenDate {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"d"];
+    NSString *todayString = [dateFormat stringFromDate:today];
+    NSString *givenDateString = [dateFormat stringFromDate:givenDate];
+    if ([givenDateString isEqualToString:todayString]) {
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark -  Get first date of this month.
 - (NSDate *)firstDayOfCurrentMonth:(NSDate*)date {
     NSDate *startDate = nil;

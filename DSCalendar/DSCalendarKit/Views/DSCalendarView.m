@@ -8,6 +8,11 @@
 
 #import "DSCalendarView.h"
 #import "CalendarDateView.h"
+#import "DateManerger.h"
+
+@interface DSCalendarView () <DateManergerDelegate>
+
+@end
 
 @implementation DSCalendarView
 
@@ -28,7 +33,16 @@
     // Initialization code
     CalendarDateView *calendarDateView = [[CalendarDateView alloc] init];
     [self.dateCalendarView addSubview:calendarDateView];
-    
+    [[DateManerger sharedDateManerger] setDelegate:self];
+}
+
+- (void)didSeletedDate {
+    // Remove view.
+    for (UIView *view in self.dateCalendarView.subviews) {
+        [view removeFromSuperview];
+    }
+    CalendarDateView *calendarDateView = [[CalendarDateView alloc] init];
+    [self.dateCalendarView addSubview:calendarDateView];
 }
 
 @end

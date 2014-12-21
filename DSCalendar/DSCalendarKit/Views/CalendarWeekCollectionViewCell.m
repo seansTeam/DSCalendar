@@ -8,6 +8,7 @@
 
 #import "CalendarWeekCollectionViewCell.h"
 #import "DateCollectionViewCell.h"
+#import "DateManerger.h"
 
 @interface CalendarWeekCollectionViewCell ()
 
@@ -59,9 +60,26 @@
         date = [self.calendar getNextDateFromDate:date];
     }
     cell.date = date;
+    if ([Calendar isToday:date]) {
+        cell.todayImageView.hidden = NO;
+    }
+    else {
+        cell.todayImageView.hidden = YES;
+    }
+    
+    cell.selectedDayImageView.hidden = YES;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"d"];
     NSString *nowDateString = [dateFormat stringFromDate:date];
+    NSString *selectedDayString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
+    if ([nowDateString isEqualToString:selectedDayString]) {
+        cell.selectedDayImageView.hidden = NO;
+    }
+    else {
+        cell.selectedDayImageView.hidden = YES;
+    }
+    
+    
     [cell.dateButton setTitle:nowDateString forState:UIControlStateNormal];
     return cell;
 }

@@ -21,5 +21,6 @@
 - (NSDate *)getFirstDayOfTheCalendarFromDate:(NSDate *)givenDate;
 - (NSDate *)getFirstDayOfTheWeekFromWeek:(NSInteger)givenWeek :(NSDate *)givenDate;
 - (NSDate *)getNextDateFromDate:(NSDate *)givenDate;
++ (BOOL)isToday:(NSDate *)givenDate;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DateCollectionViewCell.h"
+#import "DateManerger.h"
 
 @implementation DateCollectionViewCell
 
@@ -32,6 +33,11 @@
         self = [arrayOfViews objectAtIndex:0];
     }
     return self;
+}
+
+- (IBAction)onTouchDateButton:(UIButton *)sender {
+    [[DateManerger sharedDateManerger] dateDidseleted:self.date];
+    self.selectedDayImageView.hidden = NO;
 }
 
 @end

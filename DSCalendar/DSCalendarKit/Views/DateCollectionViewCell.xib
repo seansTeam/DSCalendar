@@ -13,10 +13,10 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="45" height="42"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_selecteddate" translatesAutoresizingMaskIntoConstraints="NO" id="6gy-rN-KH1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_today" translatesAutoresizingMaskIntoConstraints="NO" id="Mw6-aR-qZv">
                         <rect key="frame" x="11" y="10" width="23" height="23"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_today" translatesAutoresizingMaskIntoConstraints="NO" id="Mw6-aR-qZv">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_selecteddate" translatesAutoresizingMaskIntoConstraints="NO" id="6gy-rN-KH1">
                         <rect key="frame" x="11" y="10" width="23" height="23"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_d_video" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-sT-z3N">
@@ -43,6 +43,9 @@
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="onTouchDateButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3ww-li-cbn"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
