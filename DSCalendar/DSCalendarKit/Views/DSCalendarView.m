@@ -33,22 +33,20 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    CalendarDateView *calendarDateView = [[CalendarDateView alloc] init];
-    [self.dateCalendarView addSubview:calendarDateView];
+    self.calendarDateView = [[CalendarDateView alloc] init];
+    [self.dateCalendarView addSubview:self.calendarDateView];
     [[DateManerger sharedDateManerger] setDelegate:self];
-    [self setCalendarType:@"month"];
+    
+}
+
+- (void)reloadUI {
+    [self.calendarDateView reloadUI];
+    [[DateManerger sharedDateManerger] setDelegate:self];
 }
 
 - (void)didSeletedDate {
 
-    // Remove view.
-    for (UIView *view in self.dateCalendarView.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    CalendarDateView *calendarDateView = [[CalendarDateView alloc] init];
-    [self.dateCalendarView addSubview:calendarDateView];
-
+    [self.calendarDateView reloadUI];
     NSDate *seletedDate = [[DateManerger sharedDateManerger] seletedDate];
     [self.delegate didSeletedDate];
     

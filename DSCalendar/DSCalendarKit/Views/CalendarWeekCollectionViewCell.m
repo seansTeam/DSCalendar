@@ -48,6 +48,10 @@
     
 }
 
+- (void)reloadUI {
+    [self.CalendarWeekCollectionView reloadData];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[NSDate date]];
     return 7;

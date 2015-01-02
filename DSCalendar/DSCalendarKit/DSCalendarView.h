@@ -23,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIView *dateCalendarView;
 
 - (void)setCalendarType:(NSString *)type;
+- (void)reloadUI;
 
 @end

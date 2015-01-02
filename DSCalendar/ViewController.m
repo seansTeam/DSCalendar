@@ -20,13 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.calendarView = [[DSCalendarView alloc] init];
+    [self.DScalendarView addSubview:self.calendarView];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.calendarView = [[DSCalendarView alloc] init];
-    [self.DScalendarView addSubview:self.calendarView];
     self.calendarView.delegate = self;
+    [self.calendarView setCalendarType:@"month"];
+    [self.calendarView reloadUI];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

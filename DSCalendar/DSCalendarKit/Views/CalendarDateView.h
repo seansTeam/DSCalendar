@@ -10,4 +10,8 @@
 
 @interface CalendarDateView : UIView
 
+@property (weak, nonatomic) IBOutlet UICollectionView *calendarCollectionView;
+
+- (void)reloadUI;
+
 @end

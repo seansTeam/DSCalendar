@@ -12,7 +12,7 @@
 #import "DateManerger.h"
 
 @interface CalendarDateView () <UICollectionViewDataSource, UICollectionViewDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *calendarCollectionView;
+
 @property (strong, nonatomic) Calendar *calendar;
 @property (strong, nonatomic) NSDate *date;
 
@@ -45,6 +45,10 @@
 
 }
 
+- (void)reloadUI {
+    [self.calendarCollectionView reloadData];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     DateManerger *dateManerger = [DateManerger sharedDateManerger];
     if (dateManerger.status == DSCALENDAR_STYLE_WEEK) {
@@ -62,7 +66,7 @@
     else {
         cell.currentWeek = indexPath.item + 1;
     }
-    
+    [cell reloadUI];
     cell.calendar = self.calendar;
     cell.calendar.calendar = self.calendar.calendar;
     return cell;
