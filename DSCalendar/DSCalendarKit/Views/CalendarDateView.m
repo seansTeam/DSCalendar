@@ -46,6 +46,7 @@
 }
 
 - (void)reloadUI {
+    self.date = [[DateManerger sharedDateManerger] seletedDate];
     [self.calendarCollectionView reloadData];
 }
 

@@ -19,8 +19,8 @@
 
 @property (weak) id<DSCalendarViewDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UIView *HeaderCalendarView;
-@property (weak, nonatomic) IBOutlet UIView *dateCalendarView;
+@property (weak, nonatomic) IBOutlet UIView *calendarHeaderView;
+@property (weak, nonatomic) IBOutlet UIView *calendarDateView;
 
 - (void)setCalendarType:(NSString *)type;
 - (void)reloadUI;

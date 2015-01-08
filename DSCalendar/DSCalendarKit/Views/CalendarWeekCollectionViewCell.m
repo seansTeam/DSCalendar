@@ -45,7 +45,6 @@
     self.CalendarWeekCollectionView.dataSource = self;
     [self.CalendarWeekCollectionView registerClass:[DateCollectionViewCell class] forCellWithReuseIdentifier:@"DateCollectionViewCell"];
     self.CalendarWeekCollectionView.bounces = NO;
-    
 }
 
 - (void)reloadUI {
@@ -53,7 +52,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[NSDate date]];
+    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[[DateManerger sharedDateManerger] seletedDate]];
     return 7;
 }
 

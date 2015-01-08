@@ -47,6 +47,14 @@ static Calendar *_calendar;
     return [self getFirstDayOfTheWeekFromDate:date];
 }
 
+- (NSDate *)getFirstDayOfTheMonthFromDate:(NSDate *)givenDate {
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
+    [components setDay:1];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *date = [gregorian dateFromComponents:components];
+    return date;
+}
+
 // Finds the date for the first day of the week
 - (NSDate *)getFirstDayOfTheWeekFromDate:(NSDate *)givenDate {
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
@@ -69,10 +77,15 @@ static Calendar *_calendar;
     return newDate;
 }
 
+- (NSDate *)getLastDateFromDate:(NSDate *)givenDate {
+    NSDate *newDate = [[NSDate alloc]initWithTimeIntervalSinceReferenceDate:([givenDate timeIntervalSinceReferenceDate]-24*3600)];
+    return newDate;
+}
+
 + (BOOL)isToday:(NSDate *)givenDate {
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"d"];
+    [dateFormat setDateFormat:@"YYYYMMdd"];
     NSString *todayString = [dateFormat stringFromDate:today];
     NSString *givenDateString = [dateFormat stringFromDate:givenDate];
     if ([givenDateString isEqualToString:todayString]) {
