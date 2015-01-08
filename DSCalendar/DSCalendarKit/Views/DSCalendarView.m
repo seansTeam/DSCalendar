@@ -53,6 +53,7 @@
 - (void)didSeletedDate {
 
     [self.dateView reloadUI];
+    [self.headerView setCalendarHeader];
     NSDate *seletedDate = [[DateManerger sharedDateManerger] seletedDate];
     [self.delegate didSeletedDate];
     
