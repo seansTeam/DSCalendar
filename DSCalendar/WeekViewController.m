@@ -1,34 +1,33 @@
 //
-//  ViewController.m
+//  WeekViewController.m
 //  DSCalendar
 //
-//  Created by Sean Yang on 2014/12/19.
+//  Created by sean on 2014/12/21.
 //  Copyright (c) 2014年 Sean Yang. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "WeekViewController.h"
 #import "DSCalendarKit/DSCalendarView.h"
 
-@interface ViewController () <DSCalendarViewDelegate>
+@interface WeekViewController () <DSCalendarViewDelegate>
 
 @property (strong, nonatomic) DSCalendarView *calendarView;
 
 @end
 
-@implementation ViewController
+@implementation WeekViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.calendarView = [[DSCalendarView alloc] init];
-    [self.DScalendarView addSubview:self.calendarView];
-
+    
+    [self.weekCalendarView addSubview:self.calendarView];
+    [self.calendarView setCalendarType:@"week"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.calendarView.delegate = self;
-    [self.calendarView setCalendarType:@"month"];
-    [self.calendarView reloadUI];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -41,7 +40,16 @@
 }
 
 - (void)didSeletedDate {
-    [self performSegueWithIdentifier:@"weekSegue" sender:self];
+    
 }
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
