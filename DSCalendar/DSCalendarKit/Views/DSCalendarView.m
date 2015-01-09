@@ -8,11 +8,13 @@
 
 #import "DSCalendarView.h"
 #import "CalendarDateView.h"
+#import "CalendarHeaderView.h"
 #import "DateManerger.h"
 
-@interface DSCalendarView () <DateManergerDelegate>
+@interface DSCalendarView () <DateManergerDelegate, CalendarHeaderViewDelegate>
 
-@property (strong, nonatomic) CalendarDateView *calendarDateView;
+@property (strong, nonatomic) CalendarDateView *dateView;
+@property (strong, nonatomic) CalendarHeaderView *headerView;
 
 @end
 
@@ -26,6 +28,7 @@
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"DSCalendarView" owner:nil options:nil];
         DSCalendarView *dSCalendarView = [views lastObject];
         self = dSCalendarView;
+        self.dateManerger = [DateManerger sharedDateManerger];
         return self;
     }
     return self;
@@ -33,33 +36,50 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.calendarDateView = [[CalendarDateView alloc] init];
-    [self.dateCalendarView addSubview:self.calendarDateView];
-    [[DateManerger sharedDateManerger] setDelegate:self];
+    self.headerView = [[CalendarHeaderView alloc] init];
+    [self.calendarHeaderView addSubview:self.headerView];
+    [self.headerView setDelegate:(id)self];
+    
+    self.dateView = [[CalendarDateView alloc] init];
+    [self.calendarDateView addSubview:self.dateView];
+    [[DateManerger sharedDateManerger] setDelegate:(id)self];
     
 }
 
 - (void)reloadUI {
-    [self.calendarDateView reloadUI];
-    [[DateManerger sharedDateManerger] setDelegate:self];
+    [self.dateView reloadUI];
+    [[DateManerger sharedDateManerger] setDelegate:(id)self];
 }
 
-- (void)didSeletedDate {
-
-    [self.calendarDateView reloadUI];
-    NSDate *seletedDate = [[DateManerger sharedDateManerger] seletedDate];
-    [self.delegate didSeletedDate];
-    
+- (void)didSeletedDate:(NSDate *)date {
+    [self.delegate didSeletedDate:date];
+    [self.dateView reloadUI];
+    [self.headerView setCalendarHeader];
 }
 
 - (void)setCalendarType:(NSString *)type {
     DateManerger *dateManerger = [DateManerger sharedDateManerger];
     if ([type isEqualToString:@"week"]) {
         dateManerger.status = DSCALENDAR_STYLE_WEEK;
+        self.headerView.lastMonthButton.hidden = YES;
+        self.headerView.nextMonthButton.hidden = YES;
     }
     else {
         dateManerger.status = DSCALENDAR_STYLE_MONTH;
+        self.headerView.lastMonthButton.hidden = NO;
+        self.headerView.nextMonthButton.hidden = NO;
     }
+}
+
+- (void)changeMonth:(NSDate *)date {
+    [self.dateManerger setDate:date];
+    [self.delegate didMonthCahange:date];
+    [self.dateView reloadUI];
+    [self.headerView setCalendarHeader];
+}
+
+- (void)setCalendarDataWithDictionary:(NSMutableDictionary *)data {
+    [[DateManerger sharedDateManerger] setCalendarData:data];
 }
 
 @end

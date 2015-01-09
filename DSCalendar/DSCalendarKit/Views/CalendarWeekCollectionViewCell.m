@@ -45,7 +45,6 @@
     self.CalendarWeekCollectionView.dataSource = self;
     [self.CalendarWeekCollectionView registerClass:[DateCollectionViewCell class] forCellWithReuseIdentifier:@"DateCollectionViewCell"];
     self.CalendarWeekCollectionView.bounces = NO;
-    
 }
 
 - (void)reloadUI {
@@ -53,7 +52,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[NSDate date]];
+    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[[DateManerger sharedDateManerger] seletedDate]];
     return 7;
 }
 
@@ -73,11 +72,11 @@
     
     cell.selectedDayImageView.hidden = YES;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"d"];
+    [dateFormat setDateFormat:@"dd"];
     NSString *nowDateString = [dateFormat stringFromDate:date];
     [cell.dateButton setTitle:nowDateString forState:UIControlStateNormal];
     
-    [dateFormat setDateFormat:@"Md"];
+    [dateFormat setDateFormat:@"MMdd"];
     nowDateString = [dateFormat stringFromDate:date];
     NSString *selectedDayString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
     if ([nowDateString isEqualToString:selectedDayString]) {
@@ -87,15 +86,38 @@
         cell.selectedDayImageView.hidden = YES;
     }
     
-    [dateFormat setDateFormat:@"M"];
+    NSMutableDictionary *data = [[DateManerger sharedDateManerger] calendarData];
+    if ([data objectForKey:date]) {
+        cell.flagImageView.hidden = NO;
+    }
+    else {
+        cell.flagImageView.hidden = YES;
+    }
+    
+    [dateFormat setDateFormat:@"MM"];
     NSString *monthString = [dateFormat stringFromDate:date];
     NSString *selectedMonthString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
     if ([monthString isEqualToString:selectedMonthString]) {
-        cell.dateButton.enabled = YES;
+        UIColor *color = [UIColor
+                          colorWithRed:102.0 / 255.0f
+                          green:102.0 / 255.0f
+                          blue:102.0 / 255.0f
+                          alpha:1];
+        [cell.dateButton setTitleColor:color forState:UIControlStateNormal];
+        UIImage *image = [UIImage imageNamed:@"ic_d_video.png"];
+        cell.flagImageView.image = image;
     }
     else {
-        cell.dateButton.enabled = NO;
+        UIColor *color = [UIColor
+                          colorWithRed:230.0 / 255.0f
+                          green:230.0 / 255.0f
+                          blue:230.0 / 255.0f
+                          alpha:1];
+        [cell.dateButton setTitleColor:color forState:UIControlStateNormal];
+        UIImage *image = [UIImage imageNamed:@"ic_d_video_lastmonth.png"];
+        cell.flagImageView.image = image;
     }
+    
     return cell;
 }
 

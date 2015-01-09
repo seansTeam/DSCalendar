@@ -20,8 +20,11 @@
 - (NSUInteger)numberOfWeeksInCurrentMonth:(NSDate*)date;
 - (NSDate *)getFirstDayOfTheWeekFromDate:(NSDate *)givenDate;
 - (NSDate *)getFirstDayOfTheCalendarFromDate:(NSDate *)givenDate;
+- (NSDate *)getLasterDayOfTheCalendarFromDate:(NSDate *)givenDate;
+- (NSDate *)getFirstDayOfTheMonthFromDate:(NSDate *)givenDate;
 - (NSDate *)getFirstDayOfTheWeekFromWeek:(NSInteger)givenWeek :(NSDate *)givenDate;
 - (NSDate *)getNextDateFromDate:(NSDate *)givenDate;
+- (NSDate *)getLastDateFromDate:(NSDate *)givenDate;
 - (NSInteger)week:(NSDate*)date;
 + (BOOL)isToday:(NSDate *)givenDate;
 

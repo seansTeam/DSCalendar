@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "ic_d_video_lastmonth.png"
+      "filename" : "btn_month_next.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "ic_d_video_lastmonth@2x.png"
+      "filename" : "btn_month_next@2x.png"
     },
     {
       "idiom" : "universal",
