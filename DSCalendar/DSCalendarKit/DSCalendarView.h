@@ -20,9 +20,6 @@
 @interface DSCalendarView : UIView
 
 @property (strong, nonatomic) DateManerger *dateManerger;
-@property (strong, nonatomic) NSDate *lastVisibleDate;
-@property (strong, nonatomic) NSDate *firstVisibleDate;
-@property (strong, nonatomic) NSDate *seletedDate;
 
 @property (weak) id<DSCalendarViewDelegate> delegate;
 

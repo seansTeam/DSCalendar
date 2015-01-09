@@ -28,6 +28,7 @@
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"DSCalendarView" owner:nil options:nil];
         DSCalendarView *dSCalendarView = [views lastObject];
         self = dSCalendarView;
+        self.dateManerger = [DateManerger sharedDateManerger];
         return self;
     }
     return self;
@@ -54,8 +55,6 @@
     [self.delegate didSeletedDate:date];
     [self.dateView reloadUI];
     [self.headerView setCalendarHeader];
-    NSDate *seletedDate = [[DateManerger sharedDateManerger] seletedDate];
-    
 }
 
 - (void)setCalendarType:(NSString *)type {
