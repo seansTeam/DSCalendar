@@ -50,8 +50,8 @@
     [[DateManerger sharedDateManerger] setDelegate:(id)self];
 }
 
-- (void)didSeletedDate {
-    [self.delegate didSeletedDate];
+- (void)didSeletedDate:(NSDate *)date {
+    [self.delegate didSeletedDate:date];
     [self.dateView reloadUI];
     [self.headerView setCalendarHeader];
     NSDate *seletedDate = [[DateManerger sharedDateManerger] seletedDate];
@@ -72,8 +72,9 @@
     }
 }
 
-- (void)changeMonth {
-    [self.delegate didMonthCahange];
+- (void)changeMonth:(NSDate *)date {
+    [self.dateManerger setDate:date];
+    [self.delegate didMonthCahange:date];
     [self.dateView reloadUI];
     [self.headerView setCalendarHeader];
 }

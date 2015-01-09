@@ -11,7 +11,7 @@
 @protocol CalendarHeaderViewDelegate <NSObject>
 
 @optional
-- (void)changeMonth;
+- (void)changeMonth:(NSDate *)date;
 
 @end
 

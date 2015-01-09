@@ -32,7 +32,7 @@
     NSDate *newDate = [calendar getLastDateFromDate:date];
     DateManerger *dateManerger = [DateManerger sharedDateManerger];
     dateManerger.seletedDate = [calendar getFirstDayOfTheMonthFromDate:newDate];
-    [self.delegate changeMonth];
+    [self.delegate changeMonth:dateManerger.seletedDate];
 }
 
 - (IBAction)onTouchNextMonthButton:(UIButton *)sender {
@@ -44,7 +44,7 @@
     }
     DateManerger *dateManerger = [DateManerger sharedDateManerger];
     dateManerger.seletedDate = [calendar getFirstDayOfTheMonthFromDate:date];
-    [self.delegate changeMonth];
+    [self.delegate changeMonth:dateManerger.seletedDate];
 }
 
 - (void)setCalendarHeader {

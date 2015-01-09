@@ -7,6 +7,13 @@
 //
 
 #import "DateManerger.h"
+#import "Calendar.h"
+
+@interface DateManerger ()
+
+@property (strong, nonatomic) Calendar *calendar;
+
+@end
 
 @implementation DateManerger
 
@@ -17,7 +24,10 @@ static DateManerger *dateManerger;
     if (!self) {
         return nil;
     }
+    self.calendar = [Calendar sharedCalendar];
     self.seletedDate = [NSDate date];
+    self.firstVisibleDate = [self.calendar getFirstDayOfTheCalendarFromDate:self.seletedDate];
+    self.lastVisibleDate = [self.calendar getLasterDayOfTheCalendarFromDate:self.seletedDate];
     return self;
 }
 
@@ -31,8 +41,14 @@ static DateManerger *dateManerger;
 }
 
 - (void)dateDidseleted:(NSDate *)givenDate {
+    [self setDate:givenDate];
+    [self.delegate didSeletedDate:givenDate];
+}
+
+- (void)setDate:(NSDate *)givenDate {
+    self.firstVisibleDate = [self.calendar getFirstDayOfTheCalendarFromDate:givenDate];
+    self.lastVisibleDate = [self.calendar getLasterDayOfTheCalendarFromDate:givenDate];
     self.seletedDate = givenDate;
-    [self.delegate didSeletedDate];
 }
 
 @end

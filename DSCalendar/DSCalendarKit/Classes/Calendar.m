@@ -55,6 +55,15 @@ static Calendar *_calendar;
     return date;
 }
 
+- (NSDate *)getLasterDayOfTheCalendarFromDate:(NSDate *)givenDate {
+    NSDate *date = [self getFirstDayOfTheCalendarFromDate:givenDate];
+    NSInteger number = [self numberOfWeeksInCurrentMonth:givenDate];
+    for (int i = 1; i < number * 7; i++) {
+        date = [self getNextDateFromDate:date];
+    }
+    return date;
+}
+
 // Finds the date for the first day of the week
 - (NSDate *)getFirstDayOfTheWeekFromDate:(NSDate *)givenDate {
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];

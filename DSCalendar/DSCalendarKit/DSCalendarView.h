@@ -7,16 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DateManerger.h"
 
 @protocol DSCalendarViewDelegate <NSObject>
 
 @optional
-- (void)didSeletedDate;
-- (void)didMonthCahange;
+- (void)didSeletedDate:(NSDate *)date;
+- (void)didMonthCahange:(NSDate *)date;
 
 @end
 
 @interface DSCalendarView : UIView
+
+@property (strong, nonatomic) DateManerger *dateManerger;
+@property (strong, nonatomic) NSDate *lastVisibleDate;
+@property (strong, nonatomic) NSDate *firstVisibleDate;
+@property (strong, nonatomic) NSDate *seletedDate;
 
 @property (weak) id<DSCalendarViewDelegate> delegate;
 

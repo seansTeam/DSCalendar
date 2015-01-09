@@ -39,7 +39,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)didSeletedDate {
+- (void)didSeletedDate:(NSDate *)date {
     
 }
 /*

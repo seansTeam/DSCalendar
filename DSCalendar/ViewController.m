@@ -56,8 +56,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)didSeletedDate {
+- (void)didSeletedDate:(NSDate *)date {
     [self performSegueWithIdentifier:@"weekSegue" sender:self];
+}
+
+- (void)didMonthCahange:(NSDate *)date {
+    
 }
 
 // 20141219081259 - > 2014/12/29 00:00:00

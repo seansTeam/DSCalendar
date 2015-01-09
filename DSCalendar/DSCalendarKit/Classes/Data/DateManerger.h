@@ -16,12 +16,14 @@ typedef NS_ENUM(NSInteger, DSCALENDAR_STYLE) {
 @protocol DateManergerDelegate <NSObject>
 
 @optional
-- (void)didSeletedDate;
+- (void)didSeletedDate:(NSDate *)date;
 
 @end
 
 @interface DateManerger : NSObject
 
+@property (strong, nonatomic) NSDate *lastVisibleDate;
+@property (strong, nonatomic) NSDate *firstVisibleDate;
 @property (strong, nonatomic) NSDate *seletedDate;
 @property (strong, nonatomic) NSMutableDictionary *calendarData;
 
@@ -30,5 +32,6 @@ typedef NS_ENUM(NSInteger, DSCALENDAR_STYLE) {
 
 + (id)sharedDateManerger;
 - (void)dateDidseleted:(NSDate *)givenDate;
+- (void)setDate:(NSDate *)givenDate;
 
 @end
