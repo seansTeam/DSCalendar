@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, DSCALENDAR_STYLE) {
 @interface DateManerger : NSObject
 
 @property (strong, nonatomic) NSDate *seletedDate;
+@property (strong, nonatomic) NSMutableDictionary *calendarData;
 
 @property (nonatomic, assign) DSCALENDAR_STYLE status;
 @property (weak) id<DateManergerDelegate> delegate;

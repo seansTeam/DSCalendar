@@ -12,6 +12,7 @@
 
 @optional
 - (void)didSeletedDate;
+- (void)didMonthCahange;
 
 @end
 
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *calendarDateView;
 
 - (void)setCalendarType:(NSString *)type;
+- (void)setCalendarDataWithDictionary:(NSMutableDictionary *)data;
 - (void)reloadUI;
 
 @end

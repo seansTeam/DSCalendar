@@ -86,6 +86,14 @@
         cell.selectedDayImageView.hidden = YES;
     }
     
+    NSMutableDictionary *data = [[DateManerger sharedDateManerger] calendarData];
+    if ([data objectForKey:date]) {
+        cell.flagImageView.hidden = NO;
+    }
+    else {
+        cell.flagImageView.hidden = YES;
+    }
+    
     [dateFormat setDateFormat:@"MM"];
     NSString *monthString = [dateFormat stringFromDate:date];
     NSString *selectedMonthString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
@@ -109,6 +117,7 @@
         UIImage *image = [UIImage imageNamed:@"ic_d_video_lastmonth.png"];
         cell.flagImageView.image = image;
     }
+    
     return cell;
 }
 
