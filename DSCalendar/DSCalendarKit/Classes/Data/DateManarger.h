@@ -1,5 +1,5 @@
 //
-//  DateManerger.h
+//  DateManarger.h
 //  DSCalendar
 //
 //  Created by sean on 2014/12/21.
@@ -13,14 +13,14 @@ typedef NS_ENUM(NSInteger, DSCALENDAR_STYLE) {
     DSCALENDAR_STYLE_WEEK
 };
 
-@protocol DateManergerDelegate <NSObject>
+@protocol DateManargarDelegate <NSObject>
 
 @optional
 - (void)didSeletedDate:(NSDate *)date;
 
 @end
 
-@interface DateManerger : NSObject
+@interface DateManarger : NSObject
 
 @property (strong, nonatomic) NSDate *lastVisibleDate;
 @property (strong, nonatomic) NSDate *firstVisibleDate;
@@ -28,9 +28,9 @@ typedef NS_ENUM(NSInteger, DSCALENDAR_STYLE) {
 @property (strong, nonatomic) NSMutableDictionary *calendarData;
 
 @property (nonatomic, assign) DSCALENDAR_STYLE status;
-@property (weak) id<DateManergerDelegate> delegate;
+@property (weak) id<DateManargarDelegate> delegate;
 
-+ (id)sharedDateManerger;
++ (id)sharedDateManarger;
 - (void)dateDidseleted:(NSDate *)givenDate;
 - (void)setDate:(NSDate *)givenDate;
 

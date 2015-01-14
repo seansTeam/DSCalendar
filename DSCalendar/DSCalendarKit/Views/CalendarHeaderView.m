@@ -7,7 +7,7 @@
 //
 
 #import "CalendarHeaderView.h"
-#import "DateManerger.h"
+#import "DateManarger.h"
 #import "Calendar.h"
 
 @implementation CalendarHeaderView
@@ -28,27 +28,27 @@
 
 - (IBAction)onTouchLastMonthButton:(UIButton *)sender {
     Calendar *calendar = [Calendar sharedCalendar];
-    NSDate *date = [calendar getFirstDayOfTheCalendarFromDate:[[DateManerger sharedDateManerger] seletedDate]];
+    NSDate *date = [calendar getFirstDayOfTheCalendarFromDate:[[DateManarger sharedDateManarger] seletedDate]];
     NSDate *newDate = [calendar getLastDateFromDate:date];
-    DateManerger *dateManerger = [DateManerger sharedDateManerger];
-    dateManerger.seletedDate = [calendar getFirstDayOfTheMonthFromDate:newDate];
-    [self.delegate changeMonth:dateManerger.seletedDate];
+    DateManarger *dateManarger = [DateManarger sharedDateManarger];
+    dateManarger.seletedDate = [calendar getFirstDayOfTheMonthFromDate:newDate];
+    [self.delegate changeMonth:dateManarger.seletedDate];
 }
 
 - (IBAction)onTouchNextMonthButton:(UIButton *)sender {
     Calendar *calendar = [Calendar sharedCalendar];
-    NSDate *date = [calendar getFirstDayOfTheMonthFromDate:[[DateManerger sharedDateManerger] seletedDate]];
+    NSDate *date = [calendar getFirstDayOfTheMonthFromDate:[[DateManarger sharedDateManarger] seletedDate]];
     NSInteger number = [calendar numberOfDaysInCurrentMonth:date];
     for (int i = 1; i <= number; i++) {
         date = [calendar getNextDateFromDate:date];
     }
-    DateManerger *dateManerger = [DateManerger sharedDateManerger];
-    dateManerger.seletedDate = [calendar getFirstDayOfTheMonthFromDate:date];
-    [self.delegate changeMonth:dateManerger.seletedDate];
+    DateManarger *dateManarger = [DateManarger sharedDateManarger];
+    dateManarger.seletedDate = [calendar getFirstDayOfTheMonthFromDate:date];
+    [self.delegate changeMonth:dateManarger.seletedDate];
 }
 
 - (void)setCalendarHeader {
-    NSDate *date = [[DateManerger sharedDateManerger] seletedDate];
+    NSDate *date = [[DateManarger sharedDateManarger] seletedDate];
     NSCalendar *calendar = [[Calendar sharedCalendar] calendar];
     NSCalendarUnit flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *dateComponents = [calendar components:flags fromDate:date];

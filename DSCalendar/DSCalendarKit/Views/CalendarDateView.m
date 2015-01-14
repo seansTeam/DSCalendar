@@ -9,7 +9,7 @@
 #import "CalendarDateView.h"
 #import "CalendarWeekCollectionViewCell.h"
 #import "Calendar.h"
-#import "DateManerger.h"
+#import "DateManarger.h"
 
 @interface CalendarDateView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -46,13 +46,13 @@
 }
 
 - (void)reloadUI {
-    self.date = [[DateManerger sharedDateManerger] seletedDate];
+    self.date = [[DateManarger sharedDateManarger] seletedDate];
     [self.calendarCollectionView reloadData];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    DateManerger *dateManerger = [DateManerger sharedDateManerger];
-    if (dateManerger.status == DSCALENDAR_STYLE_WEEK) {
+    DateManarger *dateManarger = [DateManarger sharedDateManarger];
+    if (dateManarger.status == DSCALENDAR_STYLE_WEEK) {
         return 1;
     }
     return [self.calendar numberOfWeeksInCurrentMonth:self.date];
@@ -60,9 +60,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CalendarWeekCollectionViewCell *cell = (CalendarWeekCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CalendarWeekCollectionViewCell" forIndexPath:indexPath];
-    DateManerger *dateManerger = [DateManerger sharedDateManerger];
-    if (dateManerger.status == DSCALENDAR_STYLE_WEEK) {
-        cell.currentWeek = [self.calendar week:[[DateManerger sharedDateManerger] seletedDate]];
+    DateManarger *dateManarger = [DateManarger sharedDateManarger];
+    if (dateManarger.status == DSCALENDAR_STYLE_WEEK) {
+        cell.currentWeek = [self.calendar week:[[DateManarger sharedDateManarger] seletedDate]];
     }
     else {
         cell.currentWeek = indexPath.item + 1;

@@ -6,18 +6,18 @@
 //  Copyright (c) 2014年 Sean Yang. All rights reserved.
 //
 
-#import "DateManerger.h"
+#import "DateManarger.h"
 #import "Calendar.h"
 
-@interface DateManerger ()
+@interface DateManarger ()
 
 @property (strong, nonatomic) Calendar *calendar;
 
 @end
 
-@implementation DateManerger
+@implementation DateManarger
 
-static DateManerger *dateManerger;
+static DateManarger *dateManarger;
 
 - (id)init {
     self = [super init];
@@ -31,13 +31,13 @@ static DateManerger *dateManerger;
     return self;
 }
 
-+ (id)sharedDateManerger {
++ (id)sharedDateManarger {
     @synchronized(self) {
-        if (dateManerger == nil) {
-            dateManerger = [[DateManerger alloc] init];
+        if (dateManarger == nil) {
+            dateManarger = [[DateManarger alloc] init];
         }
     }
-    return dateManerger;
+    return dateManarger;
 }
 
 - (void)dateDidseleted:(NSDate *)givenDate {

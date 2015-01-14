@@ -8,7 +8,7 @@
 
 #import "CalendarWeekCollectionViewCell.h"
 #import "DateCollectionViewCell.h"
-#import "DateManerger.h"
+#import "DateManarger.h"
 
 @interface CalendarWeekCollectionViewCell ()
 
@@ -52,7 +52,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[[DateManerger sharedDateManerger] seletedDate]];
+    self.firstDateOfWeek = [self.calendar getFirstDayOfTheWeekFromWeek:self.currentWeek :[[DateManarger sharedDateManarger] seletedDate]];
     return 7;
 }
 
@@ -78,7 +78,7 @@
     
     [dateFormat setDateFormat:@"MMdd"];
     nowDateString = [dateFormat stringFromDate:date];
-    NSString *selectedDayString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
+    NSString *selectedDayString = [dateFormat stringFromDate:[[DateManarger sharedDateManarger] seletedDate]];
     if ([nowDateString isEqualToString:selectedDayString]) {
         cell.selectedDayImageView.hidden = NO;
     }
@@ -86,7 +86,7 @@
         cell.selectedDayImageView.hidden = YES;
     }
     
-    NSMutableDictionary *data = [[DateManerger sharedDateManerger] calendarData];
+    NSMutableDictionary *data = [[DateManarger sharedDateManarger] calendarData];
     if ([data objectForKey:date]) {
         cell.flagImageView.hidden = NO;
     }
@@ -96,7 +96,7 @@
     
     [dateFormat setDateFormat:@"MM"];
     NSString *monthString = [dateFormat stringFromDate:date];
-    NSString *selectedMonthString = [dateFormat stringFromDate:[[DateManerger sharedDateManerger] seletedDate]];
+    NSString *selectedMonthString = [dateFormat stringFromDate:[[DateManarger sharedDateManarger] seletedDate]];
     if ([monthString isEqualToString:selectedMonthString]) {
         UIColor *color = [UIColor
                           colorWithRed:102.0 / 255.0f

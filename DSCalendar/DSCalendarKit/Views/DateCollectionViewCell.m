@@ -7,7 +7,7 @@
 //
 
 #import "DateCollectionViewCell.h"
-#import "DateManerger.h"
+#import "DateManarger.h"
 
 @implementation DateCollectionViewCell
 
@@ -36,7 +36,7 @@
 }
 
 - (IBAction)onTouchDateButton:(UIButton *)sender {
-    [[DateManerger sharedDateManerger] dateDidseleted:self.date];
+    [[DateManarger sharedDateManarger] dateDidseleted:self.date];
 }
 
 @end
