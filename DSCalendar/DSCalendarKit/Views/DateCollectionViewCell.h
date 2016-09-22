@@ -11,6 +11,7 @@
 @interface DateCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) NSDate *date;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UILabel *rightLineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *baselineLabel;

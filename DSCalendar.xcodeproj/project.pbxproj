@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142B46341A9D76B2009C953A /* DateManarger.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B46331A9D76B2009C953A /* DateManarger.m */; };
 		1431D4D51A43C0FE00FA7AD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431D4D41A43C0FE00FA7AD9 /* main.m */; };
 		1431D4D81A43C0FE00FA7AD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431D4D71A43C0FE00FA7AD9 /* AppDelegate.m */; };
 		1431D4DB1A43C0FE00FA7AD9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1431D4DA1A43C0FE00FA7AD9 /* ViewController.m */; };
@@ -24,7 +25,6 @@
 		14658B541A45BDB60027134C /* DSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B4B1A45BDB60027134C /* DSCalendarView.m */; };
 		14658B551A45BDB60027134C /* DSCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14658B4C1A45BDB60027134C /* DSCalendarView.xib */; };
 		14658B5A1A4654B50027134C /* DateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B591A4654B50027134C /* DateData.m */; };
-		14658B5D1A465A6F0027134C /* DateManerger.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B5C1A465A6F0027134C /* DateManerger.m */; };
 		14658B601A46671D0027134C /* WeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14658B5F1A46671D0027134C /* WeekViewController.m */; };
 		14CBED941A5E239C00B83D40 /* CalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CBED931A5E239C00B83D40 /* CalendarHeaderView.m */; };
 		14CBED961A5E23B600B83D40 /* CalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CBED951A5E23B600B83D40 /* CalendarHeaderView.xib */; };
@@ -41,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		142B46321A9D76B2009C953A /* DateManarger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateManarger.h; sourceTree = "<group>"; };
+		142B46331A9D76B2009C953A /* DateManarger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateManarger.m; sourceTree = "<group>"; };
 		1431D4CF1A43C0FE00FA7AD9 /* DSCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1431D4D31A43C0FE00FA7AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1431D4D41A43C0FE00FA7AD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,8 +73,6 @@
 		14658B561A45BF040027134C /* DSCalendar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DSCalendar-Prefix.pch"; sourceTree = "<group>"; };
 		14658B581A4654B50027134C /* DateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateData.h; sourceTree = "<group>"; };
 		14658B591A4654B50027134C /* DateData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateData.m; sourceTree = "<group>"; };
-		14658B5B1A465A6F0027134C /* DateManerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateManerger.h; sourceTree = "<group>"; };
-		14658B5C1A465A6F0027134C /* DateManerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateManerger.m; sourceTree = "<group>"; };
 		14658B5E1A46671D0027134C /* WeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekViewController.h; sourceTree = "<group>"; };
 		14658B5F1A46671D0027134C /* WeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekViewController.m; sourceTree = "<group>"; };
 		14CBED921A5E239C00B83D40 /* CalendarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarHeaderView.h; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 			children = (
 				14658B581A4654B50027134C /* DateData.h */,
 				14658B591A4654B50027134C /* DateData.m */,
-				14658B5B1A465A6F0027134C /* DateManerger.h */,
-				14658B5C1A465A6F0027134C /* DateManerger.m */,
+				142B46321A9D76B2009C953A /* DateManarger.h */,
+				142B46331A9D76B2009C953A /* DateManarger.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -321,6 +321,7 @@
 				1431D4DB1A43C0FE00FA7AD9 /* ViewController.m in Sources */,
 				14658B521A45BDB60027134C /* DateCollectionViewCell.m in Sources */,
 				14658B4E1A45BDB60027134C /* CalendarDateView.m in Sources */,
+				142B46341A9D76B2009C953A /* DateManarger.m in Sources */,
 				1431D4D81A43C0FE00FA7AD9 /* AppDelegate.m in Sources */,
 				1431D4D51A43C0FE00FA7AD9 /* main.m in Sources */,
 				14CBED941A5E239C00B83D40 /* CalendarHeaderView.m in Sources */,
@@ -328,7 +329,6 @@
 				14658B601A46671D0027134C /* WeekViewController.m in Sources */,
 				14658B5A1A4654B50027134C /* DateData.m in Sources */,
 				14658B4D1A45BDB60027134C /* Calendar.m in Sources */,
-				14658B5D1A465A6F0027134C /* DateManerger.m in Sources */,
 				14658B541A45BDB60027134C /* DSCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

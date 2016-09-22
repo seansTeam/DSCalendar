@@ -69,25 +69,35 @@ static Calendar *_calendar;
     NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
     // Find Sunday for the given date
     components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:givenDate];
-    [components setWeekday:1]; // 1 == Sunday, 7 == Saturday
-    [components setWeek:[components week]];
-    
-    return [calendar dateFromComponents:components];
+    NSInteger week = [components weekday]; // get this week
+
+    //Find Sunday.
+    NSDate *newDate = givenDate;
+    for (int i = 1;i < week ;i++ ) {
+        newDate = [self getLastDateFromDate:newDate];
+    }
+    return newDate;
 }
 
 - (NSDate *)getFirstDayOfTheWeekFromWeek:(NSInteger)givenWeek :(NSDate *)givenDate {
     NSDate *firstDate = [self getFirstDayOfTheCalendarFromDate:givenDate];
-    NSDate *newDate = [[NSDate alloc]initWithTimeIntervalSinceReferenceDate:([firstDate timeIntervalSinceReferenceDate]+24*3600*7*(givenWeek - 1))];
+    NSDateComponents *components=[[NSDateComponents alloc] init];
+    components.day = 7*(givenWeek - 1);
+    NSDate *newDate =[calendar dateByAddingComponents:components toDate:firstDate options: 0];
     return newDate;
 }
 
 - (NSDate *)getNextDateFromDate:(NSDate *)givenDate {
-    NSDate *newDate = [[NSDate alloc]initWithTimeIntervalSinceReferenceDate:([givenDate timeIntervalSinceReferenceDate]+24*3600)];
+    NSDateComponents *components=[[NSDateComponents alloc] init];
+    components.day = 1;
+    NSDate *newDate =[calendar dateByAddingComponents:components toDate:givenDate options: 0];
     return newDate;
 }
 
 - (NSDate *)getLastDateFromDate:(NSDate *)givenDate {
-    NSDate *newDate = [[NSDate alloc]initWithTimeIntervalSinceReferenceDate:([givenDate timeIntervalSinceReferenceDate]-24*3600)];
+    NSDateComponents *components=[[NSDateComponents alloc] init];
+    components.day = -1;
+    NSDate *newDate =[calendar dateByAddingComponents:components toDate:givenDate options: 0];
     return newDate;
 }
 
@@ -142,9 +152,17 @@ static Calendar *_calendar;
 - (NSInteger)week:(NSDate*)date {
     NSDateComponents *comps;
     comps =[calendar components:(NSWeekCalendarUnit | NSWeekdayCalendarUnit |NSWeekdayOrdinalCalendarUnit|NSWeekOfMonthCalendarUnit)   fromDate:date];
-    //    NSInteger week = [comps weekdayOrdinal]; //   1 -7  ------2 - 14
     NSInteger week = [comps weekOfMonth]; // That day a few weeks this month.
-    //    NSInteger weekday = [comps weekday]; // Of the week（Sun is “1” Mon is “2”）
+    NSInteger weekday = [comps weekday]; // Of the week（Sun is “1” Mon is “2”）
+    // If first bay is not sun week +1.
+    if (weekday == 1) {
+        NSDate *nextDate = [self getNextDateFromDate:date];
+        comps =[calendar components:(NSWeekCalendarUnit | NSWeekdayCalendarUnit |NSWeekdayOrdinalCalendarUnit|NSWeekOfMonthCalendarUnit)   fromDate:nextDate];
+        NSInteger week2 = [comps weekOfMonth];
+        if (week != week2) {
+            week ++;
+        }
+    }
     return week;
 }
 
@@ -160,7 +178,6 @@ static Calendar *_calendar;
 -(void)nextMonth:(UIButton*)sender {
     NSDateComponents*dateCom=[[NSDateComponents alloc]init];
     [dateCom setMonth:1];
-
 }
 
 @end

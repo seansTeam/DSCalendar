@@ -28,6 +28,7 @@
         NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"CalendarDateView" owner:nil options:nil];
         CalendarDateView *calendarDateView = [views lastObject];
         self = calendarDateView;
+        self.frame = frame;
         return self;
     }
     return self;
@@ -39,7 +40,6 @@
     self.calendarCollectionView.delegate = self;
     self.calendarCollectionView.dataSource = self;
     [self.calendarCollectionView registerClass:[CalendarWeekCollectionViewCell class] forCellWithReuseIdentifier:@"CalendarWeekCollectionViewCell"];
-    self.calendarCollectionView.bounces = NO;
     self.calendar = [Calendar sharedCalendar];
     self.date = [NSDate date];
 
@@ -71,6 +71,12 @@
     cell.calendar = self.calendar;
     cell.calendar.calendar = self.calendar.calendar;
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    return CGSizeMake(screenWidth, 42);
 }
 
 @end

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,49 +13,75 @@
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="45" height="42"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_today" translatesAutoresizingMaskIntoConstraints="NO" id="Mw6-aR-qZv">
-                        <rect key="frame" x="11" y="10" width="23" height="23"/>
+                        <frame key="frameInset" minX="11" minY="10" width="23" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_selecteddate" translatesAutoresizingMaskIntoConstraints="NO" id="6gy-rN-KH1">
-                        <rect key="frame" x="11" y="10" width="23" height="23"/>
+                        <frame key="frameInset" minX="11" minY="10" width="23" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_d_video" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-sT-z3N">
-                        <rect key="frame" x="17" y="0.0" width="10" height="10"/>
+                        <frame key="frameInset" minX="17" width="10" height="10"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-nt-EVM">
-                        <rect key="frame" x="0.0" y="41" width="46" height="1"/>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVh-nt-EVM">
+                        <color key="backgroundColor" red="0.93609845638275146" green="0.93607044219970703" blue="0.93608629703521729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="hug-Ni-n44"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2L-wj-10L">
-                        <rect key="frame" x="45" y="1" width="1" height="50"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2L-wj-10L">
+                        <color key="backgroundColor" red="0.93609845638275146" green="0.93607044219970703" blue="0.93608629703521729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="RaN-vF-MVi"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-8L-fk1">
-                        <rect key="frame" x="0.0" y="0.0" width="45" height="42"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-8L-fk1">
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <state key="normal">
-                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>
                             <action selector="onTouchDateButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3ww-li-cbn"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ric-A5-JdG">
+                        <frame key="frameInset" minX="1" minY="10" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.32584697008132935" green="0.32583719491958618" blue="0.32584273815155029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="48k-8L-fk1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GQt-yG-gRd"/>
+                <constraint firstAttribute="bottom" secondItem="48k-8L-fk1" secondAttribute="bottom" id="Ken-9o-Ce5"/>
+                <constraint firstAttribute="bottom" secondItem="XVh-nt-EVM" secondAttribute="bottom" constant="1" id="PTo-Dk-mvV"/>
+                <constraint firstAttribute="trailing" secondItem="d2L-wj-10L" secondAttribute="trailing" id="QZL-CE-Vj1"/>
+                <constraint firstAttribute="trailing" secondItem="XVh-nt-EVM" secondAttribute="trailing" id="YK0-Em-FMP"/>
+                <constraint firstItem="d2L-wj-10L" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="eQi-PX-dEt"/>
+                <constraint firstAttribute="bottom" secondItem="d2L-wj-10L" secondAttribute="bottom" constant="-9" id="gzN-BC-ecH"/>
+                <constraint firstItem="XVh-nt-EVM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ssn-Ss-4jp"/>
+                <constraint firstItem="48k-8L-fk1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tWE-p9-6Ne"/>
+                <constraint firstAttribute="trailing" secondItem="48k-8L-fk1" secondAttribute="trailing" id="zBe-Q2-czy"/>
+            </constraints>
             <size key="customSize" width="46" height="49"/>
             <connections>
                 <outlet property="baselineLabel" destination="XVh-nt-EVM" id="bCG-sW-TpU"/>
                 <outlet property="dateButton" destination="48k-8L-fk1" id="MlP-jO-uZn"/>
+                <outlet property="dateLabel" destination="Ric-A5-JdG" id="4Ta-80-1G7"/>
                 <outlet property="flagImageView" destination="hdj-sT-z3N" id="0Rk-Vs-FOS"/>
                 <outlet property="rightLineLabel" destination="d2L-wj-10L" id="31S-K5-8y1"/>
                 <outlet property="selectedDayImageView" destination="6gy-rN-KH1" id="Sx6-M9-pmq"/>

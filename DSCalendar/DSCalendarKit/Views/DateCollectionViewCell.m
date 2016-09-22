@@ -36,7 +36,9 @@
 }
 
 - (IBAction)onTouchDateButton:(UIButton *)sender {
-    [[DateManarger sharedDateManarger] dateDidseleted:self.date];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[DateManarger sharedDateManarger] dateDidseleted:self.date];
+    });
 }
 
 @end

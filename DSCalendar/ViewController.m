@@ -40,7 +40,7 @@
     NSLog(@"%@",date);
     
     self.calendarView.delegate = self;
-    [self.calendarView setCalendarType:@"month"];
+    [self.calendarView setCalendarType:CALENDAR_TYP_MONTH];
     
     [self.calendarView setCalendarDataWithDictionary:data];
     [self.calendarView reloadUI];

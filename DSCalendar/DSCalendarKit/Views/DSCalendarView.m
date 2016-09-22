@@ -29,6 +29,7 @@
         DSCalendarView *dSCalendarView = [views lastObject];
         self = dSCalendarView;
         self.dateManarger = [DateManarger sharedDateManarger];
+        self.frame = frame;
         return self;
     }
     return self;
@@ -36,17 +37,18 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.headerView = [[CalendarHeaderView alloc] init];
+    self.headerView = [[CalendarHeaderView alloc] initWithFrame:self.calendarHeaderView.bounds];
     [self.calendarHeaderView addSubview:self.headerView];
     [self.headerView setDelegate:(id)self];
     
-    self.dateView = [[CalendarDateView alloc] init];
+    self.dateView = [[CalendarDateView alloc] initWithFrame:self.calendarDateView.bounds];
     [self.calendarDateView addSubview:self.dateView];
     [[DateManarger sharedDateManarger] setDelegate:(id)self];
     
 }
 
 - (void)reloadUI {
+    self.headerView.frame = self.calendarHeaderView.bounds;
     [self.dateView reloadUI];
     [[DateManarger sharedDateManarger] setDelegate:(id)self];
 }

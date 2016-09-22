@@ -23,7 +23,7 @@
     self.calendarView = [[DSCalendarView alloc] init];
     
     [self.weekCalendarView addSubview:self.calendarView];
-    [self.calendarView setCalendarType:@"week"];
+    [self.calendarView setCalendarType:CALENDAR_TYP_WEEK];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -48,6 +48,7 @@
 }
 
 - (void)reloadUI {
+    self.CalendarWeekCollectionView.frame = self.bounds;
     [self.CalendarWeekCollectionView reloadData];
 }
 
@@ -75,6 +76,7 @@
     [dateFormat setDateFormat:@"dd"];
     NSString *nowDateString = [dateFormat stringFromDate:date];
     [cell.dateButton setTitle:nowDateString forState:UIControlStateNormal];
+    [cell.dateLabel setText:nowDateString];
     
     [dateFormat setDateFormat:@"MMdd"];
     nowDateString = [dateFormat stringFromDate:date];
@@ -104,6 +106,7 @@
                           blue:102.0 / 255.0f
                           alpha:1];
         [cell.dateButton setTitleColor:color forState:UIControlStateNormal];
+        [cell.dateLabel setTextColor:color];
         UIImage *image = [UIImage imageNamed:@"ic_d_video.png"];
         cell.flagImageView.image = image;
     }
@@ -114,6 +117,7 @@
                           blue:230.0 / 255.0f
                           alpha:1];
         [cell.dateButton setTitleColor:color forState:UIControlStateNormal];
+        [cell.dateLabel setTextColor:color];
         UIImage *image = [UIImage imageNamed:@"ic_d_video_lastmonth.png"];
         cell.flagImageView.image = image;
     }
